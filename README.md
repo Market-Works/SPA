@@ -1,3 +1,9 @@
+* [inverted header - semantic ui](https://react.semantic-ui.com/elements/header/#variations-inverted)
+* [HomePageLayout on Github](https://github.com/Semantic-Org/Semantic-UI-React/blob/master/docs/src/layouts/HomepageLayout.js)
+* [REACT TRAINING / REACT ROUTER](https://reacttraining.com/react-router/web/example/basic)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -15,6 +15,8 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react'
+import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
+
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -81,6 +83,7 @@ class DesktopContainer extends Component {
             style={{ minHeight: 600, padding: '1em 0em' }}
             vertical
           >
+            
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
@@ -89,12 +92,18 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
-                <Menu.Item as='a' active>
-                  Home
-                </Menu.Item>
-                <Menu.Item as='a'>Solutions</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
+                        <Link to="/">  
+                            <Menu.Item as='a' active>Home</Menu.Item>
+                        </Link>
+                <NavLink to="/solutions" activeClassName="selected">
+                    <Menu.Item as='a'>Solutions</Menu.Item>
+                </NavLink>
+                <Link to="/company">
+                    <Menu.Item as='a'>Company</Menu.Item>
+                </Link>
+                <Link to="/careers">
+                    <Menu.Item as='a'>Careers</Menu.Item>
+                </Link>
                 <Menu.Item position='right'>
                   <Button as='a' inverted={!fixed}>
                     Log in
@@ -108,7 +117,6 @@ class DesktopContainer extends Component {
             <HomepageHeading />
           </Segment>
         </Visibility>
-
         {children}
       </Responsive>
     )
@@ -197,7 +205,7 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const HomepageLayout = () => (
+const HomePageLayout = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
@@ -321,4 +329,4 @@ const HomepageLayout = () => (
   </ResponsiveContainer>
 )
 
-export default HomepageLayout
+export default HomePageLayout
